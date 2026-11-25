@@ -1,0 +1,123 @@
+:root{--accent:#ff2d2d;--bg:#0a0a0a;--bg2:#111;--card:#171717;--text:#fff;--muted:#a3a3a3;--border:#262626}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:"Poppins",Segoe UI,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%}
+.accent{color:var(--accent)}
+
+/* Navbar */
+.navbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 6%;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.logo{font-weight:700;font-size:1.4rem}.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:26px;font-size:.92rem}
+.nav-links a{transition:.3s;padding-bottom:4px;border-bottom:2px solid transparent}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);border-color:var(--accent)}
+.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:1.8rem;cursor:pointer}
+
+/* Buttons */
+.btn{display:inline-block;padding:12px 28px;border-radius:30px;font-weight:600;font-size:.95rem;cursor:pointer;border:1px solid transparent;font-family:inherit;transition:.3s}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(255,45,45,.4)}
+.btn-outline{border-color:#555}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Hero */
+.hero{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:70px 6% 0;min-height:88vh;background:radial-gradient(circle at 80% 40%,rgba(255,45,45,.12),transparent 55%)}
+.hero-text{flex:1}
+.tag{display:inline-block;border:1px dashed var(--accent);padding:6px 18px;margin-bottom:20px;font-weight:500}
+.hero h1{font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.2;margin-bottom:20px}
+.hero p{color:var(--muted);max-width:500px;margin-bottom:30px}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.hero-image{flex:1;position:relative;display:flex;justify-content:center;align-items:flex-end;align-self:flex-end}
+.hero-image img{position:relative;z-index:1;width:100%;max-width:460px;display:block;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);mask-image:linear-gradient(to bottom,#000 80%,transparent 100%)}
+.blob{position:absolute;bottom:40px;width:440px;height:440px;max-width:90%;background:var(--accent);border-radius:60% 40% 55% 45%;animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(4deg)}}
+
+/* Strip */
+.strip{background:var(--accent);display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px 20px;padding:16px 5%;font-weight:600}
+
+/* Sections */
+.section{padding:90px 6%}
+.section.alt{background:var(--bg2)}
+.eyebrow{color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:2px;font-size:.85rem}
+.section h2{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:40px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:50px;align-items:center}
+.about-grid p{color:var(--muted);margin-bottom:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 10px;text-align:center}
+.stat strong{display:block;font-size:1.9rem;color:var(--accent)}
+.stat span{font-size:.8rem;color:var(--muted)}
+
+/* Timeline */
+.timeline{border-left:2px solid var(--accent);padding-left:30px;max-width:800px}
+.tl-item{position:relative;margin-bottom:34px}
+.tl-item::before{content:"";position:absolute;left:-39px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(255,45,45,.2)}
+.tl-date{color:var(--accent);font-size:.85rem;font-weight:600}
+.tl-item h3{margin:2px 0}
+.tl-item p{color:var(--muted)}
+
+/* Cards / Skills */
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:.3s}
+.card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.card h3{margin-bottom:18px}
+.skills-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:26px}
+.bar{margin-bottom:16px}
+.bar-top{display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:6px}
+.track{height:8px;background:#2a2a2a;border-radius:8px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#b00,var(--accent));border-radius:8px;transition:width 1.4s ease}
+.visible .track i{width:var(--w)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips li{border:1px solid var(--accent);color:#fff;padding:6px 16px;border-radius:30px;font-size:.88rem;transition:.3s}
+.chips li:hover{background:var(--accent)}
+
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.project{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:.3s}
+.project:hover{transform:translateY(-6px);border-color:var(--accent)}
+.thumb{height:170px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.t1{background:linear-gradient(135deg,#ff2d2d,#5a0000)}
+.t2{background:linear-gradient(135deg,#333,#ff2d2d)}
+.t3{background:linear-gradient(135deg,#5a0000,#111)}
+.p-body{padding:22px}
+.p-body p{color:var(--muted);font-size:.92rem;margin:8px 0}
+.p-body small{color:var(--accent);display:block;margin-bottom:12px}
+.link{font-weight:600}.link:hover{color:var(--accent)}
+
+/* Achievements */
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.ach{text-align:center}
+.ach span{font-size:2.4rem;display:block;margin-bottom:10px}
+.ach h3{font-size:1rem;margin-bottom:6px}
+.ach p{color:var(--muted);font-size:.85rem}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-grid p{color:var(--muted);margin-bottom:20px}
+.contact-list li{margin-bottom:12px}
+.contact-list a:hover{color:var(--accent)}
+form input,form textarea{width:100%;padding:13px 16px;margin-bottom:14px;background:#0d0d0d;border:1px solid var(--border);border-radius:10px;color:#fff;font-family:inherit;font-size:.95rem}
+form input:focus,form textarea:focus{outline:none;border-color:var(--accent)}
+#formMsg{margin:12px 0 0;color:var(--accent);font-size:.9rem}
+footer{text-align:center;padding:26px;border-top:1px solid var(--border);color:var(--muted);font-size:.9rem}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:900px){
+  .about-grid,.skills-grid,.contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:14px;background:var(--bg);padding:20px 6%;border-bottom:1px solid var(--border)}
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .nav-btn{display:none}
+  .hero{flex-direction:column;text-align:center;padding-top:50px}
+  .hero p{margin-inline:auto}
+  .hero-buttons{justify-content:center}
+  .section{padding:70px 6%}
+}
